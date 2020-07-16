@@ -4,8 +4,10 @@
     <div class="post-meta d-flex justify-content-between">
         <div class="date meta-last">{{post.postDate}}</div>
         <div class="category"><a href="#">{{post.category}}</a></div>
-    </div><a [routerLink]="['/post',post._id]">
-        <h3 class="h4">{{post.title}}</h3></a>
+    </div>
+    <a [routerLink]="['/post',post._id]">
+        <h3 class="h4">{{post.title}}</h3>
+    </a>
     <div class="text-muted" [innerHTML]="post.post"></div>
     <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
             <div class="avatar"><img src="/assets/img/user.svg" alt="..." class="img-fluid"></div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import blogData from '../blogData.json';
 import { BlogPost } from '../BlogPost';
 
@@ -10,6 +10,7 @@ import { BlogPost } from '../BlogPost';
 export class PostComponent implements OnInit {
 
   blogPosts: Array<BlogPost> = blogData;
+  @Input() post: BlogPost
   constructor() { }
 
   ngOnInit(): void {
