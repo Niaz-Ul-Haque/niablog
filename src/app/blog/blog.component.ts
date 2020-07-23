@@ -37,7 +37,7 @@ export class BlogComponent implements OnInit {
   }
 
   getPage(num){
-    this.data.getPage(num, this.tag, this.category).subscribe(data =>{
+    this.data.getPosts(num, this.tag, this.category).subscribe(data =>{
       if(data.length > 0)
         this.blogPosts = data, this.page = num;
     });
