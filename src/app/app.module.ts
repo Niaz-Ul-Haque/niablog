@@ -17,7 +17,7 @@ import { TagsComponent } from './tags/tags.component';
 import { PostDataComponent } from './post-data/post-data.component';
 import { PagingComponent } from './paging/paging.component';
 import { FooterPostsComponent } from './footer-posts/footer-posts.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,13 +34,10 @@ import { FooterPostsComponent } from './footer-posts/footer-posts.component';
     TagsComponent,
     PostDataComponent,
     PagingComponent,
-    FooterPostsComponent
+    FooterPostsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

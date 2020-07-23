@@ -15,7 +15,6 @@ export class PostService {
     let url = `https://niablog-api.herokuapp.com/api/posts?page=${page}&perPage=${perPage}`;
     if (tag) url = url + '&tag=' + tag;
     if (category) url = url + '&category=' + category;
-
     return this.http.get<BlogPost[]>(url);
   }
 

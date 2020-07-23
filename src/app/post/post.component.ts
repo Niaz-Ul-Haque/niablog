@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import blogData from '../blogData.json';
+//import blogData from '../blogData.json';
 import { BlogPost } from '../BlogPost';
 
 @Component({
@@ -8,7 +8,7 @@ import { BlogPost } from '../BlogPost';
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit {
-  blogPosts: Array<BlogPost> = blogData;
+  blogPosts: Array<BlogPost>; // = blogData;
   @Input() post: BlogPost;
   constructor() {}
 
