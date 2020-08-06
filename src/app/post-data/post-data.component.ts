@@ -11,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class PostDataComponent implements OnInit {
   post: BlogPost;
   querySub: any;
+  commentName: string;
+  commentText: string;
 
   constructor(private route: ActivatedRoute, private data: PostService) {}
 
@@ -18,11 +20,25 @@ export class PostDataComponent implements OnInit {
     this.querySub = this.route.params.subscribe((params) => {
       this.data.getPostById(params['id']).subscribe((dataa) => {
         this.post = dataa;
+        this.post.views++;
       });
+      this.data.updatePostById(this.post._id, this.post).subscribe();
     });
   }
 
   ngOnDestroy() {
     if (this.querySub) this.querySub.unsubscribe();
+  }
+
+  submitComment() {
+    this.post.comments.push({
+      author: this.commentName,
+      comment: this.commentText,
+      date: new Date().toLocaleDateString(),
+    });
+    this.data.updatePostById(this.post._id, this.post).subscribe(() => {
+      this.commentName = '';
+      this.commentText = '';
+    });
   }
 }
