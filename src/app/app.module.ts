@@ -18,6 +18,9 @@ import { PostDataComponent } from './post-data/post-data.component';
 import { PagingComponent } from './paging/paging.component';
 import { FooterPostsComponent } from './footer-posts/footer-posts.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { NewPostComponent } from './new-post/new-post.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     PostDataComponent,
     PagingComponent,
     FooterPostsComponent,
+    NewPostComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
