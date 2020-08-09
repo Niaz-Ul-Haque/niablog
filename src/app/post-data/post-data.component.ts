@@ -20,9 +20,9 @@ export class PostDataComponent implements OnInit {
     this.querySub = this.route.params.subscribe((params) => {
       this.pService.getPostById(params['id']).subscribe((d) => {
         this.post = d;
-        this.post.views = this.post.views + 7;
+        this.post.views = this.post.views + 1;
+        this.pService.updatePostById(this.post._id, this.post).subscribe();
       });
-      this.pService.updatePostById(this.post._id, this.post).subscribe();
     });
   }
 
