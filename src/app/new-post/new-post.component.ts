@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { Router } from '@angular/router';
 import { BlogPost } from '../BlogPost';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
@@ -14,7 +15,7 @@ export class NewPostComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  formSubmit() {
+  formSubmit(): void {
     this.blogPost.tags = this.tags.split(',').map((tag) => tag.trim());
     this.blogPost.isPrivate = false;
     this.blogPost.postDate = new Date().toLocaleDateString();

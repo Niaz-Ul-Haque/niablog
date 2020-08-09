@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BlogPost } from '../BlogPost';
 import { PostService } from '../post.service';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-edit-post',
   templateUrl: './edit-post.component.html',

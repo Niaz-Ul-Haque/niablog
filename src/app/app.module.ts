@@ -20,6 +20,8 @@ import { FooterPostsComponent } from './footer-posts/footer-posts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NewPostComponent } from './new-post/new-post.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
+import { PostsTableComponent } from './posts-table/posts-table.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +41,11 @@ import { NewPostComponent } from './new-post/new-post.component';
     PagingComponent,
     FooterPostsComponent,
     NewPostComponent,
+    EditPostComponent,
+    NewPostComponent,
+    PostsTableComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
