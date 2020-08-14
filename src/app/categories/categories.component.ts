@@ -9,9 +9,9 @@ import { PostService } from '../post.service';
 export class CategoriesComponent implements OnInit {
   categories: Array<any>;
 
-  constructor(private data: PostService) {}
+  constructor(private pServ: PostService) {}
 
   ngOnInit(): void {
-    this.data.getCategories().subscribe((data) => (this.categories = data));
+    this.pServ.getCategories().subscribe((data) => (this.categories = data));
   }
 }

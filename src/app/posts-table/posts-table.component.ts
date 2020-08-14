@@ -9,11 +9,11 @@ import { BlogPost } from '../BlogPost';
   styleUrls: ['./posts-table.component.css'],
 })
 export class PostsTableComponent implements OnInit {
-  constructor(private route: Router, private data: PostService) {}
+  constructor(private route: Router, private pServ: PostService) {}
   blogPosts: Array<BlogPost> = [];
 
   ngOnInit(): void {
-    this.data.getAllPosts().subscribe((data) => {
+    this.pServ.getAllPosts().subscribe((data) => {
       this.blogPosts = data;
     });
   }

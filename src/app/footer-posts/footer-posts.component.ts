@@ -10,10 +10,10 @@ import { PostService } from '../post.service';
 export class FooterPostsComponent implements OnInit {
   posts: Array<BlogPost>;
 
-  constructor(private data: PostService) {}
+  constructor(private pServ: PostService) {}
 
   ngOnInit(): void {
-    this.data
+    this.pServ
       .getPosts(1, null, null)
       .subscribe((data) => (this.posts = data.slice(0, 3)));
   }

@@ -27,7 +27,9 @@ export class PostDataComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    if (this.querySub) this.querySub.unsubscribe();
+    if (this.querySub) {
+      this.querySub.unsubscribe();
+    }
   }
 
   submitComment() {

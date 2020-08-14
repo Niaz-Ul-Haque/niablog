@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { Router } from '@angular/router';
 import { BlogPost } from '../BlogPost';
-import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
@@ -12,7 +12,6 @@ export class NewPostComponent implements OnInit {
   blogPost: BlogPost = new BlogPost();
   tags: String;
   constructor(private router: Router, private service: PostService) {}
-
   ngOnInit(): void {}
 
   formSubmit(): void {
